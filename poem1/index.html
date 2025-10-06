@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Glowing Moving Sphere</title>
+  <title>Glowing Sphere</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #000;
+      background: black;
       overflow: hidden;
     }
 
@@ -25,28 +25,24 @@
 </head>
 <body>
 
-  <div class="sphere" id="glowingSphere"></div>
+  <div class="sphere" id="sphere"></div>
 
   <script>
-    const sphere = document.getElementById('glowingSphere');
+    const sphere = document.getElementById('sphere');
 
     function moveSphereRandomly() {
-      const maxX = window.innerWidth - 100; // sphere width
-      const maxY = window.innerHeight - 100; // sphere height
+      const maxX = window.innerWidth - 100;
+      const maxY = window.innerHeight - 100;
 
-      const randomX = Math.floor(Math.random() * maxX);
-      const randomY = Math.floor(Math.random() * maxY);
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
 
-      sphere.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      sphere.style.transform = `translate(${x}px, ${y}px)`;
     }
 
-    // Move the sphere every 3 seconds
-    setInterval(moveSphereRandomly, 3000);
-
-    // Initial move
     moveSphereRandomly();
+    setInterval(moveSphereRandomly, 3000);
   </script>
 
 </body>
 </html>
-
